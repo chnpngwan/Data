@@ -1,0 +1,6 @@
+1、创建Person类，添加name和age属性，
+   要求：
+   （1）创建PersonTest类，添加main方法并创建对象访问属性，输出结果。
+   （2）通过private修饰词将name和age进行封装，然后提供相应的get、set方法。
+   （3）在PersonTest类中通过对象间接操作属性，并输出结果。
+   

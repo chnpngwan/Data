@@ -1,0 +1,18 @@
+package javaOOP_01_03_15;
+
+public class StaticDemo {
+	static {
+		System.out.println("∫»À·ƒÃ");
+	}
+	static {
+		System.out.println("≥‘∑π");
+	}
+	static {
+		System.out.println("∫»Ã¿");
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

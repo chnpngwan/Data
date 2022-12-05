@@ -1,0 +1,39 @@
+异常处理：
+所有异常和错误的父类：throwable
+
+1、错误（Error）：
+       错误是系统导致的，不可修复和捕获，程序无法处理
+2、异常(Exception)：
+       干扰程序正常执行的错误,程序可以捕获处理，加强程序的健壮性
+3、异常处理的方式(两种)：
+ 1）try...catch...
+ 	--》捕获并进行处理
+ 	基本语法：
+	 	try{
+	 		可能出现异常的代码模块
+	 	}catch(异常的类型 异常对象){
+	 	    异常的处理方法
+	 	}
+ 特点：
+     1）try后面可以跟多个catch,catch中的异常类型小在上大在下
+ 	 2）Exception是所有异常的父类
+ 	
+ 	try{
+ 		可能出现异常的代码
+ 	}catch(异常类型 异常对象){
+ 		异常的处理方法
+ 	}finally{
+ 		资源回收（资源释放）
+ 	}
+ 	注意：finally中的内容不管try-catch会不会执行都要执行
+ 	     （不管try-catch中发生什么，finally一定会执行）
+ 	     try不能单独使用，需要配合catch或者finally
+ 	     基本结构：
+ 	            （1）try...catch
+ 	            （2）try...finally
+ 	            （3）try...catch...finally
+ 2）throw
+    抛出（甩锅）
+
+
+       
