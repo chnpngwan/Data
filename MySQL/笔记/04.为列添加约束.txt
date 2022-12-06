@@ -1,0 +1,47 @@
+(1.主键约束
+	1.约束的概念和作用（约束就是检查官，检查数据是否有重复的内容）
+	2.主键约束作用：保证实体完整性
+	3.PRIMARY KEY是检查两条表中的语句是否有重复
+	示例：为玩家表的玩家QQ列添加主键约束
+		create table users(
+	user_qq varchar(20) not null PRIMARY KEY,
+	user_name varchar(50) not null,
+	user_sex char(2) not null,
+	user_birthday date not null,
+	user_mobile char(11) not null
+)
+
+(2.外键约束
+	1.外键约束作用，保证引用完整性
+	2.references关键字的意思是引用的意思。
+	示例：为分数表添加外键约束
+		create table scores(
+	user_qq varchar(20) not null
+ 	references users(user_qq),
+	gno int not null,
+	score int not null 
+)
+
+(3.检查约束
+	1.检查约束作用，保证域完整性
+	2.check()关键字的意思是游戏编号等要大于0，否则错误
+	例如：为游戏表添加检查约束
+		create table games(
+	gno int not null check(gno>0),
+	gname varchar(50) not null,
+	gtype varchar(20) not null 
+)
+	
+(4.默认约束
+	1.作用：保证域完整性
+	2.DEFAULT'男' 
+
+(5.自增列
+	1.作用：保证实体完整性
+	2.AUTO_INCREMENT是自增列的关键字
+	例：为游戏表添加自增列
+		CREATE TABLE Games(
+	GNO INT NOT NULL AUTO_INCREMENT,
+	GName varchar(50) NOT NULL,
+	GType varchar(20) NOT NULL
+}

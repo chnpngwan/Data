@@ -1,0 +1,21 @@
+1.使用IN关键字的子查询
+	示例：查询游戏类型是‘棋牌类’的游戏的分数信息
+	1.游戏分数表中并包含游戏类型信息
+	2.采用连接查询
+	3.分两步进行，首先找到所有“棋牌类”游戏的编号，再以这一组编号为查询依据完成查询
+	
+	语法：SELECT * FROM SCORES  WHERE GNO IN 
+              (SELECT gno from games WHERE gtype='棋牌')
+注意：子查询一般不写成SELECT*FROM
+	
+	示例：查询没有参与5号游戏的玩家QQ
+	
+	语法：SELECT USER_QQ FROM USERS
+	      WHERE USER_QQ NOT IN
+	      (SELECT USER_QQ FROM SCORES WHERE GNO=5)
+
+2.使用EXISTS关键字的子查询
+	示例；如果存在昵称为“孙悟空”侧查询分数表中数据
+	SELECT * FROM SCORES
+	WHERE EXISTS
+	(SELECT*FROM USERS WHERE USER_NAME='孙悟空')

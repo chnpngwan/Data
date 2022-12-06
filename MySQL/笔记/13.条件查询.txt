@@ -1,0 +1,69 @@
+1.普通条件查询
+	语法：SELECT COL_LIST FROM TABLE_NAME
+		[WHERE CONDITION_EXPRESSION]
+	
+	示例1：查询QQ号为12301的玩家信息
+		SELECT*FROM USERS WHERE USER_QQ='12301'
+
+	示例2：查询分数大于2500分的数据
+		SELECT*FROM  SCORES WHERE SCORE>2500
+
+	
+2.比较运算符
+	等于    =
+	不等于  <>
+	大于	>
+     大于等于   >=
+	小于    <
+     小于等于   <=
+
+	示例：查询游戏编号为1且分数大于4000分的分数信息
+		SELECT * FROM SCORES
+		WHERE GNO=1 AND SCORE>4000
+
+3.逻辑运算符
+	并且    AND
+	或者    OR
+	非      NOT
+
+	示例：查询游戏编号为1和2的分数信息
+		SELECT * FROM SCORES WHERE GNO=1 OR GNO=2
+
+
+4.模糊查询
+	示例1：查询分数在2500（含）到3000（含）的分数信息
+		SELECT * FROM SCORES
+		WHERE SCORE>2500 AND SCORE<=3000
+	或
+		SELECT * FROM SCORES
+		WHERE SCORE BETWEEN 2500 AND 3000
+
+	示例2：查询分数不在2500（含）到3000（含）的分数信息
+		SELECT * FROM SCORES
+		WHERE SCORE NOT BETWEEN 2500 AND 3000
+
+	示例3：查询1987年1月1日到1992年7月31日出生的玩家
+		SELECT * FROM USERS
+		WHERE USER_BIRTHDAY
+		BETWEEN '1987-01-01' AND '1992-07-31'
+
+5.通配符
+	'_' 一个字符  
+	%   任意字符
+	[]  指定范围内
+	[^]  不在括号中
+	
+	示例1：查询所有姓孙的玩家信息
+		SELECT * FROM USERS
+	        WHERE USER_NAME LIKE '孙%'
+
+	示例2：查询所有非姓孙的玩家信息
+		SELECT * FROM USERS
+	        WHERE USER_NAME NOT LIKE '孙%'
+
+6.查询空值的运算符
+	示例1：查询生日为NULL的玩家信息
+		SELECT * FROM USERS WHERE USER_BIRTHDAY IS NULL
+
+	示例2：查询生日不为NULL的玩家信息
+		SELECT * FROM USERS WHERE USER_BIRTHDAY IS NOT NULL

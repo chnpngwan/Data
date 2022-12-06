@@ -1,0 +1,52 @@
+函数的概念：按指定格式输入参数，返回正确结果的运算单元
+	返回当前日期：	
+		    1.CURDATE()
+		    2.CURRENT_DATE()
+		    3.CURDATE()+0可以将当前日期值转换为数值型
+
+	语法：SELECT CURDATE()
+	
+	返回当前时间：
+		    1.CURTIME()
+		    2.CURRENT_TIME()
+	            3.CURTIME()+0可以将当前时间值转换为数值型
+	
+	语法：SELECT CURTIME()
+
+	返回当前日期和时间：
+			  1.CURRENT_TIMESTAMP()
+			  2.LOCALTIME()
+		          3.NOW()
+		          4.SYSDATE()
+	
+	语法：SELECT  NOW()
+	
+	获取月份：
+		1.MONTH(DATE)
+		2.MONTHNAME(DATE)
+	
+	语法：SELECT  MONTH("2015-09-22")
+	
+	获取星期：
+		1.DAYNAME(DATE)
+		2.DAYOFWEEK(DATE)
+		3.WEEKDAY(DATE)
+		4.WEEK(DATE)
+		5.WEEKOFYEAR(DATE)
+
+        语法：SELECT  DAYNAME(2017-04-05)
+
+	获取天数：
+		1.DAYOFYEAR(DATE)
+		2.DAYOFMONTH(DATE)
+
+	语法：SELECT 1.DAYOFYEAR(2017-04-05)
+
+	获取年份，季度，小时，分钟，秒钟
+		1.YEAR(DATE)
+		2.QUARTER(DATE)
+		3.HOUR(TIME)
+		4.MINUTE(TIME)
+		5.SECOND(TIME)
+	
+		

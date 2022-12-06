@@ -1,0 +1,30 @@
+联合查询语法格式
+	SELECT_STATEMENT
+UNION[ALL]SELECT_STATEMENT
+[UNION[ALL]SELECT_STATEMENT]
+[...n]
+作用与特点：
+	1.可以把多条查询语句所产生的结果集纵向连接为一体
+	语句：SELECT user_name from users
+	     UNION
+             SELECT gname from gemes
+	2.有ALL关键字可以显示全部数据（重复的也显示出来）
+	3.列的数量与类型都要兼容
+
+     示例1：查询玩家表中所有女性玩家和生日为空的玩家
+     语法：SELECT *FROM USERS WHERE USER_SEX='女'
+	   UNION
+	   SELECT * FORM USERS WHERE USER_BIRTHDAY IS NULL
+	
+     示例2：查询QQ是"12301"的玩家所有分数并计算出总分数和平均分数，并显示到同一结果集中
+     语法：SELECT USER_QQ,GNO,SCORE FROM SCORES WHERE USER_QQ='12301'
+	   UNION ALL
+	   SELECT '总分', ' ',SUM(SCORE)FROM SCORES
+	   WHERE USER_QQ='12301'
+	   UNION ALL
+	   SELECT '平均分', ' ',AVG(SCORE)FROM SCORES
+           WHERE USER_QQ='12301'
+
+
+
+     

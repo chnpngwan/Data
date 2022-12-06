@@ -1,0 +1,10 @@
+1.创建数据库语法：（命令行窗口操作）
+	CREATE DATABASE DATABASENAME
+示例：创建名为MySQLTest的数据库
+	CREATE DATABASE MySQLTest;
+
+
+2.删除数据库语法：（命令行窗口操作）
+	DROP DATABASE DATABASENAME
+示例：删除名为MySQLTest的数据库
+	DROP DATABASE MySQLTest;

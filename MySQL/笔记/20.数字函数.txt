@@ -1,0 +1,49 @@
+绝对值函数：
+	ABS(X)
+语法：SELECT ABS(7)
+
+符号函数：
+	SIGN(X)
+语法：SELECT  SIGN(-1)
+
+获取随机数函数
+	1.RAND()
+	2.RAND(X)
+语法：SELECT RAND()
+
+获取整数的函数
+	1.CEIL(X)/CEILING(X)
+	2.FLOOR(X)
+
+四舍五入函数
+	1.ROUND(X)
+	2.ROUND(X.Y)
+	3.TRUNCATE(X,Y)
+
+求余数函数
+	MOD(X,Y)
+
+域运算函数(平方根)
+	1.pow(x,y)或Power(x,y)
+	2.EXP(X)
+	3.SQRT(X)
+
+角度弧度互换函数
+	1.RADIANS(X)
+	2.DEGREES(X)
+
+圆周率函数
+	PI()
+
+三角函数
+	1.SIN(X)
+	2.ASIN(X)
+	3.COS(X)
+	4.ACOS(X)
+	5.TAN(X)
+	6.ATAN(X)
+	7.COT(X)
+
+	
+
+

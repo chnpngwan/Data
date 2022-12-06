@@ -1,0 +1,54 @@
+1.计算字符数和字符串长度的函数
+		1.CHAR_LENGTH(S)
+		2.LENGTH(S)
+	语法：SELECT LENGTH('s')
+
+2.合并字符串函数
+	1.CONCAT()
+	语法：SELECT CONCAT('HH','逗逼')
+
+3.替换字符串函数
+	1.INSERT(S1,X,LEN,S2)
+	2.REPLACE(S,S1,S2)
+	语法：SELECT INSERT('ADCDE',2,3,'##')
+
+4.截取字符串的函数
+	1.LEFT(S,N)
+	2.RIGHT(S,N)
+	语法：SELECT LEFT()
+	
+5.重复生成字符串函数
+	REPEAT(S,N)
+	语法：SELECT REPEAT('ABC',3)
+
+6.大小写转换函数
+	1.LOWER(X)/LCASE(X)
+	2.UPPER(X)/UCASE(X)
+	语法：SELECT LCASE('ABCD')
+
+7.填充字符串函数
+	1.LPAD(S1,LEN,S2)
+	2.RPAD(S1,LEN,S2)
+	语法：SELECT  LPAD('abcd',10,'#')
+
+8.删除空格函数
+	1.LTRIM(S)/RTRIM(S)
+	2.TRIM(S)
+	语法：SELECT RTRIM('  ABCD  ')
+
+9.删除指定字符串
+	TRIM(S1 FROM S)
+	语法：SELECT TRIM('A' FROM 'ABCADE')
+10.获取子字符串
+	SUBSTRING(S,N,LEN)
+	MID(S,N,LEN)	
+	语法：SELECT SUBSTRING('abcade',3,2)
+
+11.返回指定位置字符串函数
+	ELT(N,S1,S2)
+语法：SELECT ELT(2,'ABC','DEF','MYSQL')
+
+12.返回指定字符串位置
+	FIELD(S,S1,S2)
+
+语法：SELECT FIELD('ABC','ABC','DEF','MYSQL')

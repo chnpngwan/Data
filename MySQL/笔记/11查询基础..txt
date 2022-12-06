@@ -1,0 +1,15 @@
+查询和提取数据的过程
+	1.客户端与服务器交互
+	
+	2.语法：SELECT COL1,COL2,...COLn
+    		FROM TABLE1,TABLE2...TABLEn
+		[WHERE CONDITIONS][GROUP BY GROUP_BY_LIST]
+		[HAVING CONDITIONS][ORDER BY ORDER_LIST][ASC|DESC]]
+	
+	3.SELECT的意思是：我要查询或者显示出哪几个列的结果	 
+	  FROM的意思是：这些列来源于哪些表
+	  WHERE的意思是：符合部分条件的语句就写上WHERE
+          GROUP BY的意思是：把查询的结果进行分组
+	   HAVING的意思是：统计结果
+	   ORDER BY的意思是：把查询的结果进行排序
+

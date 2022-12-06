@@ -1,0 +1,44 @@
+1.FROM子句进行多表查询
+	示例：查询分数信息，显示玩家昵称，游戏名称和分数
+	语法：SELECT USER_NAME AS'昵称',GNAME AS'游戏名称',SCORE AS'分数'
+		FROM USERS,GAMES,SCORE
+		WHERE USERS.USER_QQ=SCORES.USER_QQ
+		AND GAMES.GNO=SCORES.GNO
+
+2.内连接
+	连接查询分为内连接和外连接两种
+	内连接特点：
+		1.相连接的两张表地位平等
+		2.如果一张表中在另一张表中不存在对应数据，侧不做连接
+	语法：SELECT USER_NAME ,score
+		FROM USERS,SCORE 
+		WHERE users.user_qq=scores.user_qq
+
+	示例1：查询每个玩家的昵称，总分和平均分
+	语法：SELECT USER_NAME AS'昵称',SUM(SCORE)AS'总分',AVG(SCORE)AS'平均分'
+		FROM USERS U INNER JOIN SCORES S ON S.USER_QQ=U.USER_QQ
+		GROUP BY U.USER_QQ,USERS.USER_NAME
+	
+	示例2：查询平均分数大于3500的分数信息，显示玩家昵称，总分数，平均分数，并按照平均分数降序排列
+	语法：SELECT USER_NAME AS'昵称',SUM(SCORE)AS'总分',AVG(SCORE)AS'平均分'
+		FROM USERS U INNER JOIN SCORES S ON S.USER_QQ=U.USER_QQ
+		GROUP BY U.USER_QQ,USERS.USER_NAME 
+		HAVING AVG(SCORE)>3500
+		ORDER BY AVG(SCORE) DESC
+	
+3.外连接
+	外连接分为左连接和右外连接
+	外连接的特点：
+		  1.做连接的两个表地位不平等，其中有一张是基础表
+		  2.基础表中的每条数据必须出现，即使另一张表没有数据与之匹配，也要用NULL补齐
+		  3.左外连接时左表是基础表，右外连接时右表是基础表
+	
+	外连接语法：SELECT COL_LIST
+		    FROM TABLE1 LEFT|RIGHT[OUTER]JOIN TABLE2 ON TABLE1.COL=TABLE2.COL
+	
+	      示例：查询所有玩家关于5号游戏的分数信息
+	      语法：SELECT USER_NAME AS'昵称'
+		    GNO AS '游戏编号',SCORE AS'分数'
+		    FROM USERS U LEFT JOIN SCORES S ON U.USER_QQ=S.USER_QQ
+		    AND S.GNO=5 
+

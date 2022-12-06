@@ -1,0 +1,27 @@
+1.查询表的全部行和列
+	示例：查询玩家表中全部的行和列
+	SELECT USER_QQ,USER_NAME,USER_SEX,USER_BIRTHDAY,USER_MOBILE 
+	FROM USERS
+	
+	简便的查询表的全部行和列的方法
+	语法：SELECT *FROM USERS
+
+
+2.查询表的部分列
+	示例：从玩家表中查询玩家QQ和昵称
+		SELECT USER_QQ,USER_NAME FROM USERS
+
+3.别名的使用
+	示例：从玩家表中查询玩家QQ和昵称，并显示为“玩家QQ”和“玩家昵称”
+		SELECT USER_QQ AS'玩家QQ',USER_NAME AS'玩家姓名'
+		FROM USERS
+
+4.DISTINCT关键字
+	作用：消除结果集中的重复行
+	示例：显示参与了游戏的玩家QQ，要求参与了多个游戏的玩家不重复显示QQ号
+	语法: SELECT DISTINCT USER_QQ FROM SCORES
+
+5.LIMIT关键字
+	作用：指定结果集中数据的显示范围
+	示例：显示玩家表中第三至第5条数据
+	语法：SELECT * FROM USERS LIMIT2,3

@@ -1,0 +1,15 @@
+1.获取MySQL版本号的函数
+	VERSION()
+
+2.查看当前用户的连接数
+	CONNECTION_ID()
+
+3.查看当前所用数据库函数
+	1.DATABASE()
+	2.SCHEMA()
+
+4.获取用户名的函数
+	1.USER()
+	2.CURRENT_USER()
+	3.SYSTEM_USER()
+	4.SESSION_USER()

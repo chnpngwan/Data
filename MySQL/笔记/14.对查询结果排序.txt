@@ -1,0 +1,28 @@
+1.对指定列进行排序
+	单列排序要素：
+		     排序依据
+		     排序方式
+		ASC表示：升序排序（默认方式）
+		DESC表示：降序排序
+		语法：SELECT COL_LIST FROM TABLE_NAME
+			ORDER BY ORDER_BY_LIST[ASC|DESC]
+
+		示例1：查询分数表中编号为1的所有分数信息，并按照分数升序排序
+			SELECT * FROM SCORES
+			WHERE GNO=1
+			ORDER BY SCORE ASC
+		
+		示例2：查询分数表中编号为1的所有分数信息，并按照分数降序排序
+			SELECT * FROM SCORES
+			WHERE GNO=1
+			ORDER BY SCORE DESC
+
+2.多列排序
+	多列排序要点：
+		     排序依据
+		     排序方式
+		     优先级
+		
+		示例1：查询分数表所有信息，并按照游戏编号的升序和分数的降序进行排序
+			SELECT * FROM SCORES 
+			ORDER BY GNO ASC,SCORE DESC
