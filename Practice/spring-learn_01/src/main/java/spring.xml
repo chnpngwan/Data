@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://www.springframework.org/schema/beans" 
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
+	<!--bean-->
+	<bean id="Student" class="com.student.bean.Student"></bean>	
+	<bean id="car" class="com.car.bean.Car">
+		<property name="brand" value="haoqi"/>
+		<property name="color" value="red"/>
+	</bean>
+	<bean id="employee" class="com.car.bean.Employee">
+		<property name="name" value="zhangsan"/>
+		<property name="car" ref="car"/>
+	</bean>
+	
+	<!--静态-->
+	<bean id="user" class="com.student.bean.UserFactory" factory-method="getInstance">
+		<property name="UserName" value="张三"/>
+		<property name="password" value="123456"/>
+	</bean>
+	
+	<!--动态-->
+	<bean id="userFactory" class="com.student.bean.UserFactory"></bean>
+	<bean id="user1" factory-bean="userFactory" factory-method="getUser">
+		<property name="UserName" value="李四"/>
+		<property name="password" value="123456"/>
+	</bean>
+</beans>
