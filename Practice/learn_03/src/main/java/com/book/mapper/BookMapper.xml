@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 接口访问路径 -->
+<mapper namespace="com.book.mapper.BookMapper">
+	<!-- 全表查询 -->
+	<select id="selectAll" resultType="Book">
+		select * from book
+	</select>
+	<!-- 条件查询：根据ID查询数据 -->
+	<select id="findById" resultType="book">
+		select * from book where id=#{id}
+	</select>
+	<!-- 添加数据 -->
+	<insert id="insert" parameterType="book">
+		insert into book (id,name,age) values(#{id},#{name},#{author},#{price},#{type})
+	</insert>
+	<!-- 修改数据 -->
+	<update id="update" parameterType="book">
+		update book set name=#{name},author=#{author},price=#{price},type=#{type} where id=#{id}
+	</update>
+	<!-- 删除数据 -->
+	<delete id="delUserById">
+		delete from book where id=#{id}
+	</delete>
+	<!-- 根据用户名进行模糊查询 -->
+	<select id="selectByName" parameterType="String" resultType="book">
+		select * from book where name like concat ('%',#{name},'%')
+	</select>
+</mapper>
