@@ -1,9 +1,0 @@
-
-k	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î «şøÿÿÿÿ
-k	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÙâÜşÿÿÿÿ
-o	java:S116"URename this field "brand_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Ò¼•ıÿÿÿÿ
-l	java:S116"WRename this field "company_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÀÔÜ
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§à«ıÿÿÿÿ
-h	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î «şøÿÿÿÿ
-c	java:S100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£Ïà÷
-h	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÙâÜşÿÿÿÿ
