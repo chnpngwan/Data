@@ -7,9 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import T9.Emp;
-
 public class ExecuteStatement {
 	//驱动类的类名
 	private static final String DRIVERNAME="com.mysql.jdbc.Driver";
@@ -43,7 +40,7 @@ public class ExecuteStatement {
 		try {
 			//定义SQL语句
 			String sql=" insert into tb_Store(storeId,storeName,unitPrice,storeNum,createDate)"   
-                       +" values(null,?,?,?,?)";
+                       +" values(?,?,?,?,?)";
 			conn=getConnection();//获取数据库连接
 			//3.获取PraparedStatement对象
 			pStat=conn.prepareStatement(sql);
@@ -72,11 +69,82 @@ public class ExecuteStatement {
 		}
 		return false;
 	}
-	//查询信息
-	public boolean selectData() {
+	//信息一览
+	public List<goodsList> queryAll(){
 		Connection conn=null;
 		PreparedStatement pStat=null;
-		String sql="";
-		return false;
+		ResultSet rs=null;
+		try {
+			String sql="select * from tb_store";
+			conn=getConnection();
+			pStat=conn.prepareStatement(sql);
+			rs=pStat.executeQuery();//返回ResultSet实例
+			ArrayList<goodsList> allList=new ArrayList<goodsList>();
+			//判断结果集中是否还有数据
+			while(rs.next()){
+				String storeId  = rs.getString("storeId");
+				String storeName = rs.getString("storeName");
+				String unitPrice = rs.getString("unitPrice");
+				String storeNum = rs.getString("storeNum");
+				String createDate = rs.getString("createDate");
+              //将从ResultSet结果集获取到信息封装至gl对象中
+				goodsList gl = new goodsList();
+				gl.setStoreId(storeId);
+				gl.setStoreName(storeName);
+				gl.setUnitPrice(unitPrice);
+				gl.setStoreNum(storeNum);
+				gl.setCreateDate(createDate);
+				allList.add(gl);
+			}
+			return allList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				DbConnection.colse(rs, pStat, conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
+	//查询信息
+	public List<goodsList> queryGoods(goodsList gl) {
+		Connection conn=null;
+		PreparedStatement pStat=null;
+		ResultSet rs=null;
+		try {
+			String sql="select * from tb_store where storeId,storeName like \"%\"?\"%\"";//？为占位符
+			conn=getConnection();
+			pStat=conn.prepareStatement(sql);
+			rs=pStat.executeQuery();//返回实例
+			ArrayList<goodsList> GoodsList=new ArrayList<goodsList>();
+			pStat.setString(1, gl.getStoreName());
+			//判断结果集中是否还有数据
+			while(rs.next()){
+				String storeId  = rs.getString("storeId");
+				String storeName = rs.getString("storeName");
+				String unitPrice = rs.getString("unitPrice");
+				String storeNum = rs.getString("storeNum");
+				String createDate = rs.getString("createDate");
+              //将从ResultSet结果集获取到信息封装至gl对象中
+				gl.setStoreId(storeId);
+				gl.setStoreName(storeName);
+				gl.setUnitPrice(unitPrice);
+				gl.setStoreNum(storeNum);
+				gl.setCreateDate(createDate);
+				GoodsList.add(gl);
+			}
+			return GoodsList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				DbConnection.colse(rs, pStat, conn);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+}
 }

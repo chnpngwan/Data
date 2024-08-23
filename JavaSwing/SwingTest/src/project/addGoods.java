@@ -23,7 +23,6 @@ public class addGoods extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -98,13 +97,12 @@ public class addGoods extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int n = JOptionPane.showConfirmDialog(null, "确定要添加商品信息吗？","添加确认",JOptionPane.YES_NO_OPTION);
 				if(n == 0) {
-					String id = textField.getText();
 					String name = textField.getText();
 					String price = textField_1.getText();
 					String num = textField_2.getText();
 					String date = textField_3.getText();
 					goodsList gl = new goodsList();
-					gl.setStoreId(id);
+					gl.setStoreId(null);
 					gl.setStoreName(name);
 					gl.setUnitPrice(price);
 					gl.setStoreNum(num);
@@ -113,7 +111,7 @@ public class addGoods extends JFrame {
 					boolean insert = es.insertData(gl);
 					if(insert) {
 						dispose();
-						Mian main = new Mian();
+						MianFrame main = new MianFrame();
 						main.setVisible(true);
 					}else {
 						JOptionPane.showMessageDialog(null, "添加商品信息失败");
@@ -136,15 +134,5 @@ public class addGoods extends JFrame {
 		btnNewButton_1.setFont(new Font("微软雅黑", Font.PLAIN, 16));
 		btnNewButton_1.setBounds(234, 364, 104, 31);
 		contentPane.add(btnNewButton_1);
-		
-		JLabel lblNewLabel_4 = new JLabel("商品  ID");
-		lblNewLabel_4.setFont(new Font("微软雅黑", Font.PLAIN, 16));
-		lblNewLabel_4.setBounds(63, 24, 74, 15);
-		contentPane.add(lblNewLabel_4);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(154, 23, 136, 21);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
 	}
 }

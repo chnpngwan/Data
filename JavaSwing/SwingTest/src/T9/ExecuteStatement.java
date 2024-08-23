@@ -198,39 +198,7 @@ public class ExecuteStatement {
 	
 	
 	
-	public static void main(String[] args) {
-//		Emp emp=new Emp();
-//		emp.setNo("emp_001");
-//		emp.setName("马化腾");
-//		emp.setBirthday("1971/10/29");
-//		emp.setAddress("广东省深圳市");
-//		emp.setPost("首席执行官");
-//		ExecuteStatement ex=new ExecuteStatement();
-//		boolean flag=ex.inserData(emp);
-//		if(flag){
-//			System.out.println("员工信息添加成功:");
-//			System.out.println(" "+emp);
-//		}else{
-//			System.out.println("添加员工信息失败");
-//		}
-		
-		
-//		Emp emp=new Emp();
-//		emp.setNo("emp_001");
-//		emp.setName("马化腾");
-//		emp.setBirthday("1971/10/29");
-//		emp.setAddress("广东省广州市");
-//		emp.setPost("退居二线");
-//		ExecuteStatement ex=new ExecuteStatement();
-//		boolean flag=ex.updateData(emp);
-//		if(flag){
-//			System.out.println("员工信息修改成功:");
-//			System.out.println(" "+emp);
-//		}else{
-//			System.out.println("修改员工信息失败");
-//		}
-		
-		
+	public static void main(String[] args) {	
 		ExecuteStatement es=new ExecuteStatement();
 		List<Emp> empList=es.queryEmp();
 		System.out.println("序号      员工工号       员工姓名       出生日期               家庭地址           所在职务");

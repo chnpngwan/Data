@@ -63,7 +63,7 @@ public class LoginFrame extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("用户名");
 		lblNewLabel_1.setFont(new Font("微软雅黑", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(177, 142, 54, 30);
+		lblNewLabel_1.setBounds(177, 142, 65, 30);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("密    码");
@@ -81,7 +81,7 @@ public class LoginFrame extends JFrame {
 					if ("123456".equals(userPwd)) {
 						JOptionPane.showMessageDialog(null, "登录成功");
 						dispose();
-						Mian main = new Mian();
+						MianFrame main = new MianFrame();
 						main.setVisible(true);
 						
 					}else {
